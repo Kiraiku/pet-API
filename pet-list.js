@@ -1,13 +1,34 @@
 
 //1.0 GET method implementation.
-const app = document.getElementById('app');
+async function fetchPets() {
+    try {
+    const response = await fetch('http://localhost:3000/pets',);
 
-function getPet() {
-    fetch('http://localhost:3000/pets')
-    .then(res => res.json())
-    .then(data => {
-        app.innerHTML = `${data.pets}`;
+    if(!response.ok) {
+        throw new Error(`Failed to fetch pets: ${response.status}`)
+    }
+
+    return response.json();
+} catch(e) {
+    console.log(e);
+}
+}
+
+function listsPets(petContainerElementId) {
+    const petContainerElement = document.getElementById(petContainerElementId);
+
+    if(!petContainerElement) {
+       return; 
+    }
+
+
+    fetchPets()
+    .then(pets => {})
+    .catch(e => {
+        console.log(e);
     })
 }
 
-getPet(app);
+function petElement(pet) {
+    const 
+}
