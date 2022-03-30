@@ -54,3 +54,17 @@ a {
     font-weight: bold;
 }
 
+.btn {
+    width:21%;
+    margin: 20px;
+    padding: 10px;
+    font-weight: bold;
+    background:green;
+    color: #fff;
+    border:1px solid green;
+}
+
+#del {
+    background: #ff6347;
+    border:1px solid #ff6347;
+}

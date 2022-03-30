@@ -8,11 +8,11 @@ const app = express();
 const PORT = 3000;
 
 //Where we add the pets
-let pets = [{
-    "name": "Pursloud",
+let pets = [ {
+    "name": "Purseloud",
     "species": "Cat",
     "favFood": "Dry Food",
-    "birthYear": "2018",
+    "birthYear": "2019",
     "photo": ""
 }];
 
