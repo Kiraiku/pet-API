@@ -9,7 +9,7 @@ fetch('http://localhost:3000/pets').then((data) => {
     completedata.map((values) => {
         data1+= `    <div class="card">
         <h1 class="title">${values.name} </h1>
-        <img class="image" src="images/puss1.jpg" alt="img">
+        <img class="image" src="images/images3.jpg" alt="img">
         <p>Species: ${values.species}</p>
         <p class="favFood">Favorite food <br>${values.favFood}</p>
         <p class="birthYear">Birth Year <br>${values.birthYear}</p>
