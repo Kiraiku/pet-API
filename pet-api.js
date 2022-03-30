@@ -9,12 +9,11 @@ const PORT = 3000;
 
 //Where we add the pets
 let pets = [{
-    "name": "Purseloud",
+    "name": "Pursloud",
     "species": "Cat",
     "favFood": "Dry Food",
     "birthYear": "2018",
     "photo": ""
-    
 }];
 
 app.use(cors());
