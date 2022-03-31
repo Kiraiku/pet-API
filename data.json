@@ -1,0 +1,17 @@
+[
+    {
+        "name": "Meowsalot",
+        "species": "Cat",
+        "favFood": "Omena",
+        "birthYear": "2017",
+        "photo": ""
+    },
+
+    {
+        "name": "Purseloud",
+        "species": "Cat",
+        "favFood": "Dry food",
+        "birthYear": "2018",
+        "photo": ""
+    }
+]

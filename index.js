@@ -1,19 +1,22 @@
-const PORT = process.env.PORT || 3000;
+const express = require('express');
+const app = express();
+
+const port = process.env.PORT || 3000;
 
 const { v4: uuidv4 } = require('uuid');
 
-const express = require('express');
+
 
 const bodyParser = require('body-parser');
 
 const cors = require('cors');
 
-const app = express();
+
 
 // const PORT = 3000;
 
 //Where we add the pets
-let pets = [];
+const importData = require('./data.json')
 
 app.use(cors());
 
@@ -22,7 +25,7 @@ app.use(bodyParser.urlencoded({ extended: false}));
 app.use(bodyParser.json());
 
 app.get('/pets', (req, res) => {
-    res.json(pets);
+    res.json(importData);
 });
 
 app.post('/pet', (req, res) => {
@@ -34,12 +37,12 @@ app.post('/pet', (req, res) => {
 
     //Output pet to console for debugging
     // console.log(pet);
-    pets.push(petWithId);
+    importData.push(petWithId);
 
     res.send('Pet is added to the database');
 });
 
-app.listen(PORT, () => console.log(`Hello world app listening on port:${PORT}!`));
+app.listen(port, () => console.log(`Hello world app listening on port:${port}!`));
 
 
 
@@ -48,9 +51,9 @@ app.listen(PORT, () => console.log(`Hello world app listening on port:${PORT}!`)
 app.delete ('/pets/:id', (req, res) => {
        const { id } = req.params;
 
-       const deleted = pets.find(pet => pet.id == id)
+       const deleted = importData.find(pet => pet.id == id)
        if(deleted) {
-        pets = pets.filter(pet => pet.id !== id);
+        importData = importData.filter(pet => pet.id !== id);
 
         res.send('Pet deleted from listf successfully')
        } else {
