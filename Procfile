@@ -1,1 +1,1 @@
-web: node pet-api.js
+web: node index.js
