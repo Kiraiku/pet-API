@@ -1,4 +1,4 @@
-const PORT = process.env.PORT || 3000;
+
 
 import { v4 as uuidv4 } from 'uuid';
 
@@ -9,7 +9,7 @@ import { urlencoded, json } from 'body-parser';
 import cors from 'cors';
 
 const app = express();
-
+const PORT = process.env.PORT || 3000;
 // const PORT = 3000;
 
 //Where we add the pets
