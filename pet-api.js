@@ -21,6 +21,10 @@ app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false}));
 app.use(bodyParser.json());
 
+app.get('/pets', (req, res) => {
+    res.json(pets);
+});
+
 app.post('/pet', (req, res) => {
     const pet = req.body;
 
@@ -37,9 +41,7 @@ app.post('/pet', (req, res) => {
 
 app.listen(PORT, () => console.log(`Hello world app listening on port:${PORT}!`));
 
-app.get('/pets', (req, res) => {
-    res.json(pets);
-});
+
 
 
 // Delete Pet from List
