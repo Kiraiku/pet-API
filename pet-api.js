@@ -1,4 +1,4 @@
-// import{ v4 as uuidv4} from 'uuid';
+const PORT = process.env.PORT || 3000;
 
 const { v4: uuidv4 } = require('uuid');
 
@@ -9,7 +9,7 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+
 // const PORT = 3000;
 
 //Where we add the pets
