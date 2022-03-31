@@ -25,7 +25,8 @@ app.use(bodyParser.urlencoded({ extended: false}));
 app.use(bodyParser.json());
 
 app.get('/pets', (req, res) => {
-    res.json(importData);
+    // res.json(importData);
+    res.sendFile(path + '/client/index.html');
 });
 
 app.post('/pet', (req, res) => {

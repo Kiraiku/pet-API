@@ -1,4 +1,4 @@
-
+// const port = process.env.PORT || 3000;
 
 fetch('http://localhost:3000/pets').then((data) => {
     // console.log(data);
