@@ -26,3 +26,8 @@ fetch('http://localhost:3000/pets').then((data) => {
 }).catch((err) => {
     console.log(err);
 })
+
+//Delete A Pet: 
+fetch('http://localhost:3000/pets/:id', {
+  method : "DELETE", }).then((response) => response.json())
+  .then((data) => console.log(data));
