@@ -9,7 +9,8 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
+// const PORT = 3000;
 
 //Where we add the pets
 let pets = [];
@@ -49,9 +50,9 @@ app.delete ('/pets/:id', (req, res) => {
        if(deleted) {
         pets = pets.filter(pet => pet.id !== id);
 
-        res.send('Pet deleted from list successfully')
+        res.send('Pet deleted from listf successfully')
        } else {
-           res.status(404).json({ mesage: "Channel you are looking for does not exist"})
+           res.status(404).json({ message: "Channel you are looking for does not exist"})
        }
    
 })
