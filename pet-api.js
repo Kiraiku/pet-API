@@ -21,7 +21,7 @@ app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false}));
 app.use(bodyParser.json());
 
-app.get('/', (req, res) => {
+app.get('/pets', (req, res) => {
     res.json(pets);
 });
 
