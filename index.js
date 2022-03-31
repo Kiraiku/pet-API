@@ -1,15 +1,15 @@
+const PORT = process.env.PORT || 3000;
 
+const { v4: uuidv4 } = require('uuid');
 
-import { v4 as uuidv4 } from 'uuid';
+const express = require('express');
 
-import express from 'express';
+const bodyParser = require('body-parser');
 
-import { urlencoded, json } from 'body-parser';
-
-import cors from 'cors';
+const cors = require('cors');
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+
 // const PORT = 3000;
 
 //Where we add the pets
@@ -18,8 +18,8 @@ let pets = [];
 app.use(cors());
 
 //Configuring body parser middleware
-app.use(urlencoded({ extended: false}));
-app.use(json());
+app.use(bodyParser.urlencoded({ extended: false}));
+app.use(bodyParser.json());
 
 app.get('/pets', (req, res) => {
     res.json(pets);
