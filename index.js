@@ -16,7 +16,7 @@ const cors = require('cors');
 // const PORT = 3000;
 
 //Where we add the pets
-const importData = require('./data.json')
+const importData = require('./data.json');
 
 app.use(cors());
 
@@ -25,7 +25,7 @@ app.use(bodyParser.urlencoded({ extended: false}));
 app.use(bodyParser.json());
 
 app.get('/pets', (req, res) => {
-    // res.json(importData);
+    res.json(importData);
     res.sendFile(path + '/client/index.html');
 });
 
