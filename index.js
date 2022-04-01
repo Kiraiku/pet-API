@@ -30,6 +30,7 @@ app.get('/pets', (req, res) => {
     // res.sendFile(path + '/client/index.html');
 });
 
+// Get Pet List
 app.post('/pet', (req, res) => {
     const pet = req.body;
 
