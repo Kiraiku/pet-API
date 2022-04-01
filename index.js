@@ -52,13 +52,13 @@ app.listen(port, () => console.log(`Hello world app listening on port:${port}!`)
 app.delete ('/pets/:id', (req, res) => {
        const { id } = req.params;
 
-       const deleted = importData.find(pet => pet.id == id)
+       const deleted = importData.find(pet => pet.id == id);
        if(deleted) {
         importData = importData.filter(pet => pet.id !== id);
 
         res.send('Pet deleted from listf successfully')
        } else {
-           res.status(404).json({ message: "Channel you are looking for does not exist"})
+           res.status(404).json({ message: "Channel you are looking for does not exist"});
        }
    
 })
