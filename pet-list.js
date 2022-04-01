@@ -15,8 +15,8 @@ fetch('http://localhost:3000/pets').then((data) => {
         <p class="birthYear">Birth Year <br>${values.birthYear}</p>
 
 
-        <button class="btn" type="button" class="btn btn danger">Edit</button>
-        <button clas="btn" id="del" type="button" class="btn btn danger">Delete</button>
+        <a class="btn"  onClick="onEdit()">Edit</a>
+        <a clas="btn" id="del" type="button" onClick ="onDelete()" >Delete</a>
     </div>
 `
     });

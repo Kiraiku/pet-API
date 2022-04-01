@@ -16,7 +16,8 @@ const cors = require('cors');
 // const PORT = 3000;
 
 //Where we add the pets
-const importData = require('./data.json');
+// const importData = require('./data.json');
+let pets = [];
 
 app.use(cors());
 
@@ -25,8 +26,8 @@ app.use(bodyParser.urlencoded({ extended: false}));
 app.use(bodyParser.json());
 
 app.get('/pets', (req, res) => {
-    res.json(importData);
-    res.sendFile(path + '/client/index.html');
+    res.json(pets);
+    // res.sendFile(path + '/client/index.html');
 });
 
 app.post('/pet', (req, res) => {
@@ -38,7 +39,7 @@ app.post('/pet', (req, res) => {
 
     //Output pet to console for debugging
     // console.log(pet);
-    importData.push(petWithId);
+    pets.push(petWithId);
 
     res.send('Pet is added to the database');
 });
@@ -46,17 +47,15 @@ app.post('/pet', (req, res) => {
 app.listen(port, () => console.log(`Hello world app listening on port:${port}!`));
 
 
-
-
 // Delete Pet from List
 app.delete ('/pets/:id', (req, res) => {
        const { id } = req.params;
 
-       const deleted = importData.find(pet => pet.id == id);
+       const deleted = pets.find(pet => pet.id == id);
        if(deleted) {
-        importData = importData.filter(pet => pet.id !== id);
+        pets = pets.filter(pet => pet.id !== id);
 
-        res.send('Pet deleted from listf successfully')
+        res.send('Pet deleted from list successfully')
        } else {
            res.status(404).json({ message: "Channel you are looking for does not exist"});
        }
