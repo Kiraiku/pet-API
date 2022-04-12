@@ -1,6 +1,6 @@
 // const port = process.env.PORT || 3000;
 
-fetch('http://localhost:3000/pets').then((data) => {
+fetch('https://pet-list-heruku.herokuapp.com/pets').then((data) => {
     // console.log(data);
     return data.json();
 }).then((completedata) => {
@@ -28,6 +28,6 @@ fetch('http://localhost:3000/pets').then((data) => {
 })
 
 //Delete A Pet: 
-fetch('http://localhost:3000/pets/:id', {
+fetch('https://pet-list-heruku.herokuapp.com/pets/:id', {
   method : "DELETE", }).then((response) => response.json())
   .then((data) => console.log(data));
