@@ -15,8 +15,8 @@ fetch('https://pet-list-heruku.herokuapp.com/pets').then((data) => {
         <p class="birthYear">Birth Year <br>${values.birthYear}</p>
 
 
-        <a class="btn"  onClick="onEdit()">Edit</a>
-        <a clas="btn" id="del" type="button" onClick ="onDelete()" >Delete</a>
+        <button class="btn"  onclick="onEdit()">Edit</button>
+        <button class="btn" id="del" onclick="onDelete(this)">Delete</button>
     </div>
 `
     });
@@ -28,6 +28,13 @@ fetch('https://pet-list-heruku.herokuapp.com/pets').then((data) => {
 })
 
 //Delete A Pet: 
-fetch('https://pet-list-heruku.herokuapp.com/pets/:id', {
-  method : "DELETE", }).then((response) => response.json())
-  .then((data) => console.log(data));
+// document.getElementById('del').addEventListener("click", onDelete);
+
+function onDelete() {
+// fetch('https://pet-list-heruku.herokuapp.com/pets/:id', {
+//   method : "DELETE", }).then((response) => response.json())
+//   .then((data1) => console.log(data1));
+ var elem = document.getElementById('cards');
+ elem.parentNode.removeChild(elem);
+ return false;
+}
